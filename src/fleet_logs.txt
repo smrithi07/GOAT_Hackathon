@@ -11145,3 +11145,179 @@
 2025-03-30 14:16:21,879 - DEBUG - Robot 3 path chosen: [1, 8, 9]
 2025-03-30 14:16:24,703 - INFO - Robot 2 assigned task from vertex 8 to 10
 2025-03-30 14:16:24,704 - DEBUG - Robot 2 path chosen: [8, 9, 10]
+2025-03-30 14:21:32,448 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 14:21:34,661 - INFO - Spawned robot 2 at (965.47645, -295.79954999999995) on vertex 9
+2025-03-30 14:21:41,092 - INFO - Robot 1 assigned task from vertex 6 to 13
+2025-03-30 14:21:41,094 - DEBUG - Robot 1 path chosen: [6, 7, 1, 0, 13]
+2025-03-30 14:21:51,296 - INFO - Spawned robot 3 at (866.58475, -231.76895000000002) on vertex 1
+2025-03-30 14:21:54,719 - INFO - Robot 2 assigned task from vertex 9 to 6
+2025-03-30 14:21:54,720 - DEBUG - Robot 2 path chosen: [9, 8, 1, 7, 6]
+2025-03-30 14:22:05,164 - INFO - Robot 3 assigned task from vertex 1 to 0
+2025-03-30 14:22:05,165 - DEBUG - Robot 3 path chosen: [1, 0]
+2025-03-30 14:22:23,051 - INFO - Robot 1 assigned task from vertex 13 to 7
+2025-03-30 14:22:23,055 - DEBUG - Robot 1 path chosen: [13, 0, 1, 7]
+2025-03-30 14:22:30,588 - INFO - Robot 3 assigned task from vertex 0 to 8
+2025-03-30 14:22:30,589 - DEBUG - Robot 3 path chosen: [0, 1, 8]
+2025-03-30 14:22:48,438 - INFO - Robot 1 assigned task from vertex 7 to 5
+2025-03-30 14:22:48,439 - DEBUG - Robot 1 path chosen: [7, 6, 5]
+2025-03-30 14:22:51,235 - INFO - Robot 2 assigned task from vertex 6 to 4
+2025-03-30 14:22:51,236 - DEBUG - Robot 2 path chosen: [6, 5, 4]
+2025-03-30 14:26:39,446 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 14:26:41,732 - INFO - Spawned robot 2 at (965.47645, -295.79954999999995) on vertex 9
+2025-03-30 14:26:45,524 - INFO - Robot 1 assigned task from vertex 6 to 13
+2025-03-30 14:26:45,526 - DEBUG - Robot 1 path chosen: [6, 7, 1, 0, 13]
+2025-03-30 14:26:56,342 - INFO - Spawned robot 3 at (866.58475, -231.76895000000002) on vertex 1
+2025-03-30 14:27:00,163 - INFO - Robot 2 assigned task from vertex 9 to 7
+2025-03-30 14:27:00,164 - DEBUG - Robot 2 path chosen: [9, 8, 1, 7]
+2025-03-30 14:27:07,292 - INFO - Robot 3 assigned task from vertex 1 to 0
+2025-03-30 14:27:07,293 - DEBUG - Robot 3 path chosen: [1, 0]
+2025-03-30 14:27:20,315 - INFO - Robot 1 assigned task from vertex 13 to 12
+2025-03-30 14:27:20,316 - DEBUG - Robot 1 path chosen: [13, 12]
+2025-03-30 14:27:25,384 - INFO - Robot 3 assigned task from vertex 0 to 6
+2025-03-30 14:27:25,385 - DEBUG - Robot 3 path chosen: [0, 1, 7, 6]
+2025-03-30 14:27:32,351 - INFO - Robot 2 assigned task from vertex 7 to 5
+2025-03-30 14:27:32,351 - DEBUG - Robot 2 path chosen: [7, 6, 5]
+2025-03-30 14:27:38,912 - INFO - Spawned robot 4 at (965.47645, -295.79954999999995) on vertex 9
+2025-03-30 14:27:42,262 - INFO - Robot 4 assigned task from vertex 9 to 0
+2025-03-30 14:27:42,263 - DEBUG - Robot 4 path chosen: [9, 8, 1, 0]
+2025-03-30 14:27:45,145 - INFO - Robot 3 assigned task from vertex 6 to 1
+2025-03-30 14:27:45,146 - DEBUG - Robot 3 path chosen: [6, 7, 1]
+2025-03-30 14:27:52,896 - INFO - Spawned robot 5 at (764.1357499999999, -274.456) on vertex 3
+2025-03-30 14:27:56,335 - INFO - Robot 5 assigned task from vertex 3 to 11
+2025-03-30 14:27:56,336 - DEBUG - Robot 5 path chosen: [3, 2, 1, 0, 13, 12, 11]
+2025-03-30 14:27:58,414 - INFO - Robot 3 assigned task from vertex 1 to 7
+2025-03-30 14:27:58,415 - DEBUG - Robot 3 path chosen: [1, 7]
+2025-03-30 14:28:00,658 - INFO - Robot 4 assigned task from vertex 0 to 11
+2025-03-30 14:28:00,659 - DEBUG - Robot 4 path chosen: [0, 13, 12, 11]
+2025-03-30 14:28:06,132 - INFO - Robot 1 assigned task from vertex 12 to 10
+2025-03-30 14:28:06,134 - DEBUG - Robot 1 path chosen: [12, 11, 10]
+2025-03-30 14:28:13,978 - INFO - Robot 1 assigned task from vertex 10 to 9
+2025-03-30 14:28:13,979 - DEBUG - Robot 1 path chosen: [10, 9]
+2025-03-30 14:28:17,309 - INFO - Robot 4 assigned task from vertex 11 to 10
+2025-03-30 14:28:17,310 - DEBUG - Robot 4 path chosen: [11, 10]
+2025-03-30 14:35:40,040 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 14:35:43,893 - INFO - Spawned robot 2 at (965.47645, -295.79954999999995) on vertex 9
+2025-03-30 14:35:48,512 - INFO - Robot 1 assigned task from vertex 6 to 13
+2025-03-30 14:35:48,514 - DEBUG - Robot 1 path chosen: [6, 7, 1, 0, 13]
+2025-03-30 14:35:58,588 - INFO - Spawned robot 3 at (866.58475, -231.76895000000002) on vertex 1
+2025-03-30 14:36:01,996 - INFO - Robot 2 assigned task from vertex 9 to 7
+2025-03-30 14:36:01,997 - DEBUG - Robot 2 path chosen: [9, 8, 1, 7]
+2025-03-30 14:36:15,645 - INFO - Robot 3 assigned task from vertex 1 to 7
+2025-03-30 14:36:15,647 - DEBUG - Robot 3 path chosen: [1, 7]
+2025-03-30 14:36:20,686 - INFO - Robot 3 assigned task from vertex 7 to 5
+2025-03-30 14:36:20,688 - DEBUG - Robot 3 path chosen: [7, 6, 5]
+2025-03-30 14:36:59,018 - INFO - Spawned robot 4 at (739.946365, -236.7491) on vertex 4
+2025-03-30 14:37:02,604 - INFO - Robot 2 assigned task from vertex 7 to 3
+2025-03-30 14:37:02,605 - DEBUG - Robot 2 path chosen: [7, 1, 2, 3]
+2025-03-30 14:37:10,460 - INFO - Spawned robot 5 at (866.58475, -231.76895000000002) on vertex 1
+2025-03-30 14:37:14,251 - INFO - Robot 2 assigned task from vertex 3 to 7
+2025-03-30 14:37:14,251 - DEBUG - Robot 2 path chosen: [3, 2, 1, 7]
+2025-03-30 14:37:18,515 - INFO - Robot 5 assigned task from vertex 1 to 0
+2025-03-30 14:37:18,516 - DEBUG - Robot 5 path chosen: [1, 0]
+2025-03-30 14:37:25,725 - INFO - Robot 5 assigned task from vertex 0 to 1
+2025-03-30 14:37:25,726 - DEBUG - Robot 5 path chosen: [0, 1]
+2025-03-30 14:37:32,175 - INFO - Robot 2 assigned task from vertex 7 to 3
+2025-03-30 14:37:32,176 - DEBUG - Robot 2 path chosen: [7, 1, 2, 3]
+2025-03-30 14:37:35,694 - INFO - Spawned robot 6 at (820.3404, -260.9384) on vertex 2
+2025-03-30 14:37:38,925 - INFO - Robot 5 assigned task from vertex 1 to 8
+2025-03-30 14:37:38,927 - DEBUG - Robot 5 path chosen: [1, 8]
+2025-03-30 14:37:44,455 - INFO - Robot 6 assigned task from vertex 2 to 3
+2025-03-30 14:37:44,456 - DEBUG - Robot 6 path chosen: [2, 3]
+2025-03-30 14:37:54,601 - INFO - Robot 3 assigned task from vertex 5 to 7
+2025-03-30 14:37:54,602 - DEBUG - Robot 3 path chosen: [5, 6, 7]
+2025-03-30 14:37:59,957 - INFO - Robot 4 assigned task from vertex 4 to 5
+2025-03-30 14:37:59,958 - DEBUG - Robot 4 path chosen: [4, 5]
+2025-03-30 14:38:03,331 - INFO - Robot 6 assigned task from vertex 3 to 4
+2025-03-30 14:38:03,332 - DEBUG - Robot 6 path chosen: [3, 4]
+2025-03-30 14:45:50,168 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 14:49:10,722 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 14:49:14,011 - INFO - Spawned robot 2 at (965.47645, -295.79954999999995) on vertex 9
+2025-03-30 14:49:17,861 - INFO - Robot 1 assigned task from vertex 6 to 13
+2025-03-30 14:49:17,864 - DEBUG - Robot 1 path chosen: [6, 7, 1, 0, 13]
+2025-03-30 14:49:28,203 - INFO - Spawned robot 3 at (866.58475, -231.76895000000002) on vertex 1
+2025-03-30 14:49:32,172 - INFO - Robot 1 assigned task from vertex 13 to 2
+2025-03-30 14:49:32,173 - DEBUG - Robot 1 path chosen: [13, 0, 1, 2]
+2025-03-30 14:49:38,993 - INFO - Robot 3 assigned task from vertex 1 to 8
+2025-03-30 14:49:38,994 - DEBUG - Robot 3 path chosen: [1, 8]
+2025-03-30 14:49:53,240 - INFO - Robot 3 assigned task from vertex 8 to 11
+2025-03-30 14:49:53,241 - DEBUG - Robot 3 path chosen: [8, 9, 10, 11]
+2025-03-30 14:49:54,706 - INFO - Spawned robot 4 at (1033.0644499999999, -213.27120000000002) on vertex 11
+2025-03-30 14:49:59,085 - INFO - Robot 2 assigned task from vertex 9 to 10
+2025-03-30 14:49:59,086 - DEBUG - Robot 2 path chosen: [9, 10]
+2025-03-30 14:50:03,688 - INFO - Robot 4 assigned task from vertex 11 to 13
+2025-03-30 14:50:03,688 - DEBUG - Robot 4 path chosen: [11, 12, 13]
+2025-03-30 14:50:09,329 - INFO - Robot 2 assigned task from vertex 10 to 12
+2025-03-30 14:50:09,330 - DEBUG - Robot 2 path chosen: [10, 11, 12]
+2025-03-30 14:50:11,797 - INFO - Robot 4 assigned task from vertex 13 to 0
+2025-03-30 14:50:11,799 - DEBUG - Robot 4 path chosen: [13, 0]
+2025-03-30 14:54:17,501 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 14:54:19,860 - INFO - Spawned robot 2 at (1033.0644499999999, -213.27120000000002) on vertex 11
+2025-03-30 14:54:22,711 - INFO - Robot 1 assigned task from vertex 6 to 13
+2025-03-30 14:54:22,713 - DEBUG - Robot 1 path chosen: [6, 7, 1, 0, 13]
+2025-03-30 14:54:52,563 - INFO - Spawned robot 3 at (866.58475, -231.76895000000002) on vertex 1
+2025-03-30 14:54:57,410 - INFO - Robot 2 assigned task from vertex 11 to 2
+2025-03-30 14:54:57,411 - DEBUG - Robot 2 path chosen: [11, 12, 13, 0, 1, 2]
+2025-03-30 14:55:12,924 - INFO - Robot 3 assigned task from vertex 1 to 8
+2025-03-30 14:55:12,925 - DEBUG - Robot 3 path chosen: [1, 8]
+2025-03-30 14:55:15,041 - INFO - Robot 1 assigned task from vertex 13 to 0
+2025-03-30 14:55:15,042 - DEBUG - Robot 1 path chosen: [13, 0]
+2025-03-30 14:55:18,621 - INFO - Robot 1 assigned task from vertex 0 to 7
+2025-03-30 14:55:18,623 - DEBUG - Robot 1 path chosen: [0, 1, 7]
+2025-03-30 14:58:36,487 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 14:58:38,701 - INFO - Spawned robot 2 at (984.68565, -170.58410000000003) on vertex 12
+2025-03-30 14:58:42,433 - INFO - Robot 1 assigned task from vertex 6 to 1
+2025-03-30 14:58:42,434 - DEBUG - Robot 1 path chosen: [6, 7, 1]
+2025-03-30 14:59:05,513 - INFO - Robot 2 assigned task from vertex 12 to 7
+2025-03-30 14:59:05,514 - DEBUG - Robot 2 path chosen: [12, 13, 0, 1, 7]
+2025-03-30 14:59:14,828 - INFO - Robot 1 assigned task from vertex 1 to 8
+2025-03-30 14:59:14,829 - DEBUG - Robot 1 path chosen: [1, 8]
+2025-03-30 14:59:23,218 - INFO - Spawned robot 3 at (984.68565, -170.58410000000003) on vertex 12
+2025-03-30 14:59:26,784 - INFO - Robot 3 assigned task from vertex 12 to 11
+2025-03-30 14:59:26,785 - DEBUG - Robot 3 path chosen: [12, 11]
+2025-03-30 14:59:31,964 - INFO - Robot 3 assigned task from vertex 11 to 10
+2025-03-30 14:59:31,965 - DEBUG - Robot 3 path chosen: [11, 10]
+2025-03-30 14:59:36,684 - INFO - Robot 2 assigned task from vertex 7 to 12
+2025-03-30 14:59:36,685 - DEBUG - Robot 2 path chosen: [7, 1, 0, 13, 12]
+2025-03-30 14:59:47,589 - INFO - Robot 2 assigned task from vertex 12 to 13
+2025-03-30 14:59:47,590 - DEBUG - Robot 2 path chosen: [12, 13]
+2025-03-30 15:03:24,708 - INFO - Spawned robot 1 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 15:03:27,291 - INFO - Spawned robot 2 at (930.6154, -155.6436) on vertex 13
+2025-03-30 15:03:30,339 - INFO - Robot 1 assigned task from vertex 6 to 1
+2025-03-30 15:03:30,341 - DEBUG - Robot 1 path chosen: [6, 7, 1]
+2025-03-30 15:03:38,286 - INFO - Robot 2 assigned task from vertex 13 to 7
+2025-03-30 15:03:38,287 - DEBUG - Robot 2 path chosen: [13, 0, 1, 7]
+2025-03-30 15:03:44,393 - INFO - Robot 1 assigned task from vertex 1 to 8
+2025-03-30 15:03:44,395 - DEBUG - Robot 1 path chosen: [1, 8]
+2025-03-30 15:03:46,465 - INFO - Spawned robot 3 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 15:03:54,507 - INFO - Robot 3 assigned task from vertex 6 to 0
+2025-03-30 15:03:54,508 - DEBUG - Robot 3 path chosen: [6, 7, 1, 0]
+2025-03-30 15:03:58,879 - INFO - Robot 2 assigned task from vertex 7 to 5
+2025-03-30 15:03:58,880 - DEBUG - Robot 2 path chosen: [7, 6, 5]
+2025-03-30 15:04:01,166 - INFO - Robot 2 assigned task from vertex 7 to 13
+2025-03-30 15:04:01,167 - DEBUG - Robot 2 path chosen: [7, 1, 0, 13]
+2025-03-30 15:04:13,132 - INFO - Robot 1 assigned task from vertex 8 to 3
+2025-03-30 15:04:13,133 - DEBUG - Robot 1 path chosen: [8, 1, 2, 3]
+2025-03-30 15:04:14,984 - INFO - Spawned robot 4 at (774.807475, -135.72294999999997) on vertex 6
+2025-03-30 15:04:19,154 - INFO - Robot 4 assigned task from vertex 6 to 7
+2025-03-30 15:04:19,155 - DEBUG - Robot 4 path chosen: [6, 7]
+2025-03-30 15:04:24,161 - INFO - Robot 4 assigned task from vertex 7 to 11
+2025-03-30 15:04:24,162 - DEBUG - Robot 4 path chosen: [7, 1, 0, 13, 12, 11]
+2025-03-30 15:04:26,412 - INFO - Spawned robot 5 at (1011.72085, -271.6102000000001) on vertex 10
+2025-03-30 15:04:31,485 - INFO - Robot 4 assigned task from vertex 1 to 8
+2025-03-30 15:04:31,486 - DEBUG - Robot 4 path chosen: [1, 8]
+2025-03-30 15:04:36,776 - INFO - Robot 5 assigned task from vertex 10 to 11
+2025-03-30 15:04:36,777 - DEBUG - Robot 5 path chosen: [10, 11]
+2025-03-30 15:04:44,646 - INFO - Robot 5 assigned task from vertex 11 to 7
+2025-03-30 15:04:44,647 - DEBUG - Robot 5 path chosen: [11, 12, 13, 0, 1, 7]
+2025-03-30 15:04:48,789 - INFO - Robot 3 assigned task from vertex 0 to 1
+2025-03-30 15:04:48,790 - DEBUG - Robot 3 path chosen: [0, 1]
+2025-03-30 15:04:53,900 - INFO - Robot 4 assigned task from vertex 8 to 10
+2025-03-30 15:04:53,901 - DEBUG - Robot 4 path chosen: [8, 9, 10]
+2025-03-30 15:04:55,797 - INFO - Robot 3 assigned task from vertex 1 to 8
+2025-03-30 15:04:55,798 - DEBUG - Robot 3 path chosen: [1, 8]
+2025-03-30 15:04:59,165 - INFO - Robot 2 assigned task from vertex 13 to 1
+2025-03-30 15:04:59,166 - DEBUG - Robot 2 path chosen: [13, 0, 1]
+2025-03-30 15:05:05,119 - INFO - Robot 2 assigned task from vertex 1 to 7
+2025-03-30 15:05:05,120 - DEBUG - Robot 2 path chosen: [1, 7]
+2025-03-30 15:05:10,948 - INFO - Robot 2 assigned task from vertex 7 to 5
+2025-03-30 15:05:10,949 - DEBUG - Robot 2 path chosen: [7, 6, 5]
