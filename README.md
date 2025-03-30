@@ -1,21 +1,28 @@
+Here ia the Loom screen record link
+
+- https://www.loom.com/share/e4bced11f40b4373b658d65cf12a0db2?sid=67f4bf31-fe56-4478-8a95-2ffc47490c12
+
+
+
+
 **Fleet Management System with Traffic Negotiation**
-A Python-based fleet management system for multi-robot navigation through a dynamic environment. 
+- A Python-based fleet management system for multi-robot navigation through a dynamic environment. 
 
 **Features**
-**Interactive GUI:**
+- **Interactive GUI:**
 Built using PyQt6, the system provides a dashboard with a visual environment and a side table displaying robot statuses.
 
 **Dynamic Task Assignment:**
-Click on vertices to spawn robots or assign tasks. Reserved vertices display warnings via color changes (red when occupied) and tooltips.
+- Click on vertices to spawn robots or assign tasks. Reserved vertices display warnings via color changes (red when occupied) and tooltips.
 
 **Collision Avoidance & Re-Planning:**
-Real-time detection of collisions and re-planning of robot routes based on occupancy.
+- Real-time detection of collisions and re-planning of robot routes based on occupancy.
 
 **Real-Time Updates:**
-A QTimer continuously updates robot positions, vertex reservations, and UI elements.
+- A QTimer continuously updates robot positions, vertex reservations, and UI elements.
 
 **Detailed Logging:**
-All significant events are logged in fleet_logs.txt for debugging and demonstration
+- All significant events are logged in fleet_logs.txt for debugging and demonstration
 
 
 
