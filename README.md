@@ -39,6 +39,7 @@ All significant events are logged in fleet_logs.txt for debugging and demonstrat
    ```bash
    python src/main.py
    ```
+![image](https://github.com/user-attachments/assets/5dbbe822-5ec9-488d-8e9e-f0f702f450bd)
 
 ### Interacting with the Dashboard
 
@@ -91,6 +92,10 @@ Once the application is running, you will see a split-screen interface:
 
 - **Logging:**  
   - All events (robot spawning, task assignments, collisions, and re-planning) are logged in `fleet_logs.txt` for debugging and review.
+
+![image](https://github.com/user-attachments/assets/cd171350-28bd-46cf-b871-04af6bfe2753)
+
+![image](https://github.com/user-attachments/assets/ffad7818-4b4b-40fd-942f-9ae2e45ba08e)
 
 
 
