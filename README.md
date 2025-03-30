@@ -1,4 +1,4 @@
-Here ia the Loom screen record link
+Here is the Loom screen record link
 
 - https://www.loom.com/share/e4bced11f40b4373b658d65cf12a0db2?sid=67f4bf31-fe56-4478-8a95-2ffc47490c12
 
