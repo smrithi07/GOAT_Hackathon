@@ -1,4 +1,3 @@
-# src/models/nav_graph.py
 import json
 import os
 import math
@@ -7,15 +6,13 @@ import networkx as nx
 class NavGraph:
     def __init__(self, json_filename):
         self.graph = nx.Graph()
-        # Dictionary: vertex_index -> {"pos": (x, y), "name": str, "is_charger": bool,
-        #                               "reserved_by": None, "waiting_queue": []}
+        # Dictionary: vertex_index -> { "pos": (x,y), "name": str, "is_charger": bool,
+        #                               "reserved_by": None, "waiting_queue": [] }
         self.vertices = {}
-        # List of (start_index, end_index) tuples for lanes.
         self.lanes = []
         self.load_graph(json_filename)
     
     def load_graph(self, json_filename):
-        # Build the file path (assumes data folder is one level up from src)
         current_dir = os.path.dirname(os.path.abspath(__file__))
         parent_dir = os.path.dirname(os.path.dirname(current_dir))
         data_path = os.path.join(parent_dir, "data", json_filename)
@@ -23,7 +20,6 @@ class NavGraph:
         with open(data_path, "r") as f:
             nav_data = json.load(f)
         
-        # Check if the JSON uses a "levels" key and select the first level found.
         levels = nav_data.get("levels", {})
         if levels:
             level_key = next(iter(levels))
@@ -34,12 +30,10 @@ class NavGraph:
         vertices_data = level_data.get("vertices", [])
         lanes_data = level_data.get("lanes", [])
         
-        # Define scaling factors and offsets to convert raw coordinates to scene coordinates.
         scale = 50
         offset_x = 400
         offset_y = 300
         
-        # Process vertices.
         for index, vertex in enumerate(vertices_data):
             x_val, y_val, attrs = vertex
             name = attrs.get("name", f"V{index}")
@@ -50,12 +44,11 @@ class NavGraph:
                 "pos": (x, y),
                 "name": name,
                 "is_charger": is_charger,
-                "reserved_by": None,    # No robot has reserved this vertex yet.
-                "waiting_queue": []     # List of robot IDs waiting for this vertex.
+                "reserved_by": None,
+                "waiting_queue": []
             }
             self.graph.add_node(index, pos=(x, y))
         
-        # Process lanes.
         for lane in lanes_data:
             start_index, end_index, _ = lane
             if start_index in self.vertices and end_index in self.vertices:
@@ -66,7 +59,6 @@ class NavGraph:
                 self.lanes.append((start_index, end_index))
     
     def get_shortest_path(self, start_index, dest_index):
-        # A* algorithm with Euclidean distance as heuristic.
         def heuristic(u, v):
             pos_u = self.graph.nodes[u]["pos"]
             pos_v = self.graph.nodes[v]["pos"]

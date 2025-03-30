@@ -1,4 +1,3 @@
-# src/models/robot.py
 import os
 import random
 import math
@@ -8,9 +7,18 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QPixmap, QColor, QPen, QFont
 from PyQt6.QtCore import Qt, QPointF
 
+# Threshold (in pixels) to decide if the robot is "at" a vertex.
+AT_VERTEX_THRESHOLD = 5
+
 class Robot(QGraphicsPixmapItem):
-    def __init__(self, x, y, identifier, current_vertex_index, parent=None):
-        # Load the common robot image from the assets folder.
+    def __init__(self, x, y, identifier, current_vertex_index, vertex_items, parent=None):
+        """
+        x, y: starting scene coordinates.
+        identifier: unique robot id.
+        current_vertex_index: index of the vertex where the robot spawns.
+        vertex_items: reference to the shared dictionary of vertices from NavGraph.
+        """
+        # Load and scale the robot image.
         current_dir = os.path.dirname(os.path.abspath(__file__))
         parent_dir = os.path.dirname(os.path.dirname(current_dir))
         image_path = os.path.join(parent_dir, "assets", "robot.png")
@@ -20,28 +28,33 @@ class Robot(QGraphicsPixmapItem):
         super().__init__(pixmap, parent)
         self.setPos(x, y)
         self.id = identifier
-        self.current_vertex_index = current_vertex_index  # The vertex where the robot is (or will be) located.
-        self.route = []  # List of QPointF waypoints.
-        self.speed = 2.0  # Movement speed.
-        self.selected = False
-        self.waiting = False  # Flag for collision avoidance.
-        # Initial status is "unassigned".
-        self.status = "unassigned"  
+        self.current_vertex_index = current_vertex_index
+        self.current_destination_index = None  # Set when a task is assigned.
+        self.vertex_items = vertex_items  # Shared reference.
         
-        # Apply a unique random color tint to the robot image.
+        # Reserve the starting vertex.
+        self.vertex_items[self.current_vertex_index]["reserved_by"] = self.id
+        
+        self.route = []  # List of QPointF waypoints.
+        self.speed = 2.0
+        self.selected = False
+        self.waiting = False
+        self.status = "unassigned"
+        
+        # Apply a unique color tint.
         self.unique_color = QColor(random.randint(0,255), random.randint(0,255), random.randint(0,255))
         effect = QGraphicsColorizeEffect()
         effect.setColor(self.unique_color)
         self.setGraphicsEffect(effect)
         
-        # Add a text label to display the robot ID.
+        # Display robot ID.
         self.text = QGraphicsTextItem(str(self.id), self)
         self.text.setDefaultTextColor(QColor("white"))
         font = QFont("Arial", 12, QFont.Weight.Bold)
         self.text.setFont(font)
         self.text.setPos(10, 10)
         
-        # Create a border as a QGraphicsRectItem child to indicate status.
+        # Border for visual status.
         self.border = QGraphicsRectItem(self.boundingRect(), self)
         self.border.setPen(QPen(Qt.GlobalColor.darkGray, 2))
         self.border.setBrush(Qt.GlobalColor.transparent)
@@ -49,7 +62,7 @@ class Robot(QGraphicsPixmapItem):
         self.update_visual_status()
     
     def update_visual_status(self):
-        """Update the border's pen color based on the robot's current status."""
+        """Update the border pen based on the robot's status."""
         if self.status == "unassigned":
             pen = QPen(Qt.GlobalColor.darkGray, 2)
         elif self.status == "task assigned":
@@ -72,9 +85,12 @@ class Robot(QGraphicsPixmapItem):
     
     def update_position(self):
         """
-        Move the robot along its route and update its status.
-        When the robot has no remaining route and was previously in a task state,
-        mark its task as complete and release the reservation on the destination vertex.
+        Moves the robot along its route.
+        - If the route is non-empty, the robot moves toward the next waypoint.
+        - If the robot has moved beyond the AT_VERTEX_THRESHOLD from its starting vertex,
+          clear that vertex's reservation.
+        - When the route is empty and the robot is near the destination vertex,
+          update the current vertex and reserve it.
         """
         if self.route:
             current_pos = self.pos()
@@ -82,6 +98,8 @@ class Robot(QGraphicsPixmapItem):
             dx = next_point.x() - current_pos.x()
             dy = next_point.y() - current_pos.y()
             distance = math.hypot(dx, dy)
+            
+            # Move toward the next waypoint.
             if distance < self.speed:
                 self.setPos(next_point)
                 self.route.pop(0)
@@ -90,23 +108,24 @@ class Robot(QGraphicsPixmapItem):
                 new_x = current_pos.x() + self.speed * math.cos(angle)
                 new_y = current_pos.y() + self.speed * math.sin(angle)
                 self.setPos(new_x, new_y)
-            # While there is a route, the robot is "moving".
+            
             self.status = "moving"
+            
+            # Check if the robot has left its current vertex.
+            vertex_pos = self.vertex_items[self.current_vertex_index]["pos"]
+            if math.hypot(self.pos().x() - vertex_pos[0], self.pos().y() - vertex_pos[1]) > AT_VERTEX_THRESHOLD:
+                # Clear the reservation if it was reserved by this robot.
+                if self.vertex_items[self.current_vertex_index]["reserved_by"] == self.id:
+                    self.vertex_items[self.current_vertex_index]["reserved_by"] = None
         else:
-            # If a task was previously assigned or the robot was moving or waiting, mark task complete.
+            # Route is empty: robot has (presumably) arrived.
+            if self.current_destination_index is not None:
+                dest_pos = self.vertex_items[self.current_destination_index]["pos"]
+                if math.hypot(self.pos().x() - dest_pos[0], self.pos().y() - dest_pos[1]) <= AT_VERTEX_THRESHOLD:
+                    # Robot has arrived at its destination.
+                    self.current_vertex_index = self.current_destination_index
+                    self.vertex_items[self.current_vertex_index]["reserved_by"] = self.id
             if self.status in ["task assigned", "moving", "waiting"]:
                 self.status = "task complete"
-                # Release reservation on the destination vertex.
-                # Assumes that the robot's parent has an attribute 'vertex_items'
-                # containing the vertices data.
-                try:
-                    vertex = self.parent().vertex_items[self.current_vertex_index]
-                    vertex["reserved_by"] = None
-                    # If there is a waiting queue, you might trigger assignment of the next robot.
-                    if vertex["waiting_queue"]:
-                        next_robot_id = vertex["waiting_queue"].pop(0)
-                        # Here you could notify the FleetManager to assign a task to the waiting robot.
-                except Exception as e:
-                    # In case the parent does not have vertex_items, log or handle the exception.
-                    pass
+        
         self.update_visual_status()
