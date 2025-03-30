@@ -6,8 +6,7 @@ import networkx as nx
 class NavGraph:
     def __init__(self, json_filename):
         self.graph = nx.Graph()
-        # Dictionary: vertex_index -> { "pos": (x,y), "name": str, "is_charger": bool,
-        #                               "reserved_by": None, "waiting_queue": [] }
+        # Each vertex: { "pos": (x,y), "name": str, "is_charger": bool, "reserved_by": None, "waiting_queue": [] }
         self.vertices = {}
         self.lanes = []
         self.load_graph(json_filename)

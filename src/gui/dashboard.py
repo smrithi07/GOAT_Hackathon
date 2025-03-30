@@ -1,4 +1,3 @@
-# src/gui/dashboard.py
 import os
 import sys
 import math
@@ -20,41 +19,34 @@ class FleetDashboard(QMainWindow):
         self.setWindowTitle("Fleet Management System")
         self.setGeometry(100, 100, 1200, 700)
         
-        # Main widget and layout.
         self.main_widget = QWidget()
         self.setCentralWidget(self.main_widget)
         self.main_layout = QHBoxLayout(self.main_widget)
         
-        # Left panel: graphics view for the graph.
         self.scene = QGraphicsScene(self)
-        self.scene.setBackgroundBrush(QBrush(QColor("#f0f8ff")))  # AliceBlue background
+        self.scene.setBackgroundBrush(QBrush(QColor("#f0f8ff")))
         self.view = QGraphicsView(self.scene, self)
         self.view.setMinimumWidth(800)
         
-        # Right panel: table to display robot statuses.
         self.status_table = QTableWidget()
         self.status_table.setColumnCount(4)
         self.status_table.setHorizontalHeaderLabels(["Robot ID", "Current Vertex", "Status", "Next WP"])
         self.status_table.setMinimumWidth(350)
         
-        # Use a splitter for adjustable panels.
         self.splitter = QSplitter(Qt.Orientation.Horizontal)
         self.splitter.addWidget(self.view)
         self.splitter.addWidget(self.status_table)
         self.main_layout.addWidget(self.splitter)
         
-        # Create status bar for notifications.
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
         
-        # Load navigation graph.
         self.nav_graph = NavGraph("nav_graph_2.json")
         self.vertex_items = self.nav_graph.vertices
         
         self.draw_vertices()
         self.draw_lanes()
         
-        # Initialize managers.
         self.fleet_manager = FleetManager(self.scene, self.nav_graph)
         self.traffic_manager = TrafficManager()
         
@@ -62,7 +54,6 @@ class FleetDashboard(QMainWindow):
         self.initTimer()
     
     def draw_vertices(self):
-        """Draw vertices with labels and tooltips."""
         self.graphics_vertices = {}
         for index, data in self.vertex_items.items():
             x, y = data["pos"]
@@ -86,7 +77,6 @@ class FleetDashboard(QMainWindow):
             ellipse.mousePressEvent = lambda event, idx=index: self.vertexClicked(idx)
     
     def draw_lanes(self):
-        """Draw lanes connecting vertices."""
         pen = QPen(Qt.GlobalColor.black, 2)
         for edge in self.nav_graph.lanes:
             start_index, end_index = edge
@@ -102,14 +92,11 @@ class FleetDashboard(QMainWindow):
         self.timer.start(50)
     
     def updateRobots(self):
-        """Update robot positions, collisions, table, and vertex visuals."""
         for robot in self.fleet_manager.robots:
             robot.update_position()
         self.traffic_manager.check_collisions(self.fleet_manager.robots, self.vertex_items, self.nav_graph)
-        
         self.update_status_table()
         
-        # Update vertex visuals based on reservations.
         for index, data in self.graphics_vertices.items():
             vertex = self.vertex_items[index]
             if vertex["reserved_by"] is not None or vertex["waiting_queue"]:
@@ -136,13 +123,12 @@ class FleetDashboard(QMainWindow):
             self.status_table.setItem(i, 1, QTableWidgetItem(str(robot.current_vertex_index)))
             self.status_table.setItem(i, 2, QTableWidgetItem(robot.status))
             if robot.route:
-                wp = robot.route[0]
+                next_vertex, wp = robot.route[0]
                 self.status_table.setItem(i, 3, QTableWidgetItem(f"({wp.x():.1f}, {wp.y():.1f})"))
             else:
                 self.status_table.setItem(i, 3, QTableWidgetItem("None"))
     
     def vertexClicked(self, vertex_index):
-        """On vertex click, if reserved, show warning pop-up; otherwise assign task or spawn robot."""
         vertex = self.vertex_items[vertex_index]
         if vertex["reserved_by"] is not None:
             QMessageBox.warning(self, "Vertex Reserved",
